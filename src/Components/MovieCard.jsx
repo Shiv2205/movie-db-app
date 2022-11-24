@@ -2,7 +2,7 @@ import conditionalClasses from "../util/conditionalClasses";
 
 const MovieCard = (props) => {
   return (
-    <div className="card w-96 bg-base-300 shadow-xl ml-10">
+    <div className="card bg-base-300 shadow-xl ml-10 mb-10 lg:w-96 md:w-72 sm:w-72">
       <figure className="px-2 pt-2">
         <img
           src={`https://image.tmdb.org/t/p/w500${props.obj.poster_path}`}

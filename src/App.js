@@ -20,7 +20,7 @@ function App() {
 
 
 
-      <div className="grid grid-cols-3 gap-5">
+      <div className="w-full grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
         {
           //movies.length === 0 ? "Loading" :
           movies.map((movieObj) => {
