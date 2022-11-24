@@ -16,7 +16,7 @@ const MovieCard = (props) => {
         <div className="card-actions">
           {/*<button className="btn btn-primary">Learn More</button>*/}
           <h2 className="font-bold text-lg">
-            Rating: {props.obj.vote_count === 0 ? "N/A" : <div className={conditionalClasses("radial-progress", checkProgress(props.obj.vote_average), "bg-base-100")} style={{"--value":((props.obj.vote_average/10) * 100), "--size": "4rem", "--thickness": "2px" }}>{props.obj.vote_average}</div>}
+            Rating: {props.obj.vote_count === 0 ? "N/A" : <div className={conditionalClasses("radial-progress", checkProgress(props.obj.vote_average), "bg-base-100")} style={{"--value":((props.obj.vote_average/10) * 100), "--size": "4rem", "--thickness": "2px" }}>{props.obj.vote_average.toFixed(1)}</div>}
           </h2>
         </div>
       </div>
