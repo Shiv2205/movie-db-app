@@ -8,7 +8,7 @@ function App() {
 
   useEffect(() => {
     axios(
-      `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}`
+      `https://api.themoviedb.org/3/movie/upcoming?api_key=${apiKey}`
     ).then((response) => {
       console.log(response);
       setMovies(response.data.results);
@@ -20,7 +20,7 @@ function App() {
 
 
 
-      <div className="grid grid-cols-4 gap-5">
+      <div className="grid grid-cols-3 gap-5">
         {
           //movies.length === 0 ? "Loading" :
           movies.map((movieObj) => {

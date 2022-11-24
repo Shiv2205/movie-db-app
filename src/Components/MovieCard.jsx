@@ -2,7 +2,7 @@ import conditionalClasses from "../util/conditionalClasses";
 
 const MovieCard = (props) => {
   return (
-    <div className="card w-96 bg-base-300 shadow-xl">
+    <div className="card w-96 bg-base-300 shadow-xl ml-10">
       <figure className="px-2 pt-2">
         <img
           src={`https://image.tmdb.org/t/p/w500${props.obj.poster_path}`}
@@ -14,9 +14,9 @@ const MovieCard = (props) => {
         <h2 className="card-title">{props.obj.title}</h2>
         <p>{props.obj.overview}</p>
         <div className="card-actions">
-          <button className="btn btn-primary">Learn More</button>
+          {/*<button className="btn btn-primary">Learn More</button>*/}
           <h2 className="font-bold text-lg">
-            Rating: <div className={conditionalClasses("badge", props.obj.vote_average < 7 ? "badge-secondary" : "badge-accent")}>{props.obj.vote_average.toFixed(1)}</div>
+            Rating: {props.obj.vote_count === 0 ? "N/A" : <div className={conditionalClasses("radial-progress", checkProgress(props.obj.vote_average), "bg-base-100")} style={{"--value":((props.obj.vote_average/10) * 100), "--size": "4rem", "--thickness": "2px" }}>{props.obj.vote_average}</div>}
           </h2>
         </div>
       </div>
@@ -25,3 +25,15 @@ const MovieCard = (props) => {
 };
 
 export default MovieCard;
+
+//props.obj.vote_average < 7 ? "badge-secondary" : "badge-accent" 
+//<div className={conditionalClasses("badge", checkProgress(props.obj.vote_average))}>{props.obj.vote_average.toFixed(1)}</div>
+
+const checkProgress = (progress) => {
+    if(progress < 5)
+        return "text-secondary";
+    if(progress >= 5 && progress < 7.5)
+        return "text-warning";
+    
+    return "text-accent";
+}
