@@ -16,7 +16,7 @@ const ModalCard = (props) => {
     );
     setGenreList(resList[0]);
     console.log(genreList);
-  }, [genreList]);
+  }, []);
 
   return (
     <div className="card min-w-fit">
