@@ -35,7 +35,7 @@ const ModalCard = (props) => {
         {genreList.length === 0 ? "N/A" : genreList.map((genreType) => {
           return (
             <div className="mt-5">
-                <div className="px-4 py-2 rounded-lg text-center font-semibold btn-secondary">
+                <div className="px-4 py-2 rounded-lg text-center font-semibold bg-fuchsia-600">
                 {genreType}
                 </div>
             </div>
