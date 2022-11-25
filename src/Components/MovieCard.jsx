@@ -1,4 +1,5 @@
-import conditionalClasses from "../util/conditionalClasses";
+import MovieModal from "./MovieModal";
+import RadialRating from "./RadialRating";
 
 const MovieCard = (props) => {
   return (
@@ -12,12 +13,13 @@ const MovieCard = (props) => {
       </figure>
       <div className="card-body items-center text-center">
         <h2 className="card-title">{props.obj.title}</h2>
-        <p>{props.obj.overview}</p>
+        {/*<p className="overflow-hidden max-h-8">{props.obj.overview}</p>*/}
         <div className="card-actions">
           {/*<button className="btn btn-primary">Learn More</button>*/}
-          <h2 className="font-bold text-lg">
-            Rating: {props.obj.vote_count === 0 ? "N/A" : <div className={conditionalClasses("radial-progress", checkProgress(props.obj.vote_average), "bg-base-100")} style={{"--value":((props.obj.vote_average/10) * 100), "--size": "4rem", "--thickness": "2px" }}>{props.obj.vote_average.toFixed(1)}</div>}
+          <h2 className="font-bold text-lg mt-5">
+            Rating: {props.obj.vote_count === 0 ? "N/A" : <RadialRating obj={props.obj} />}
           </h2>
+          <MovieModal id={props.obj.id} obj={props.obj} />
         </div>
       </div>
     </div>
@@ -25,15 +27,3 @@ const MovieCard = (props) => {
 };
 
 export default MovieCard;
-
-//props.obj.vote_average < 7 ? "badge-secondary" : "badge-accent" 
-//<div className={conditionalClasses("badge", checkProgress(props.obj.vote_average))}>{props.obj.vote_average.toFixed(1)}</div>
-
-const checkProgress = (progress) => {
-    if(progress < 5)
-        return "text-secondary";
-    if(progress >= 5 && progress < 7.5)
-        return "text-warning";
-    
-    return "text-accent";
-}
