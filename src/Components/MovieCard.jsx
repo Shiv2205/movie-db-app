@@ -14,7 +14,7 @@ const MovieCard = (props) => {
       <div className="card-body items-center text-center">
         <h2 className="card-title">{props.obj.title}</h2>
         {/*<p className="overflow-hidden max-h-8">{props.obj.overview}</p>*/}
-        <div className="card-actions">
+        <div className="card-actions grid grid-cols-1">
           {/*<button className="btn btn-primary">Learn More</button>*/}
           <h2 className="font-bold text-lg mt-5">
             Rating: {props.obj.vote_count === 0 ? "N/A" : <RadialRating obj={props.obj} />}

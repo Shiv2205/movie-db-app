@@ -4,7 +4,7 @@ const MovieModal = (props) => {
   return (
     <div>
       {/* The button to open modal */}
-      <label htmlFor={props.id} className="btn">
+      <label htmlFor={props.id} className="btn btn-secondary mt-5">
         Read More
       </label>
 
