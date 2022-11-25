@@ -33,7 +33,7 @@ const ModalCard = (props) => {
 
         <p>{props.obj.overview}</p><br />
         <h3 className="text-lg font-semibold">Genres:</h3>
-        <div className={conditionalClasses(genreList.length < 5 ? "lg:grid-cols-4" : "lg:grid-cols-5", "grid gap-5 md:grid-cols-3 sm:grid-cols-2")} >
+        <div className={conditionalClasses(genreList.length < 5 ? "lg:grid-cols-4" : "lg:grid-cols-5", "grid gap-5 md:grid-cols-3 md:gap-7 sm:grid-cols-2")} >
         {genreList.length === 0 ? "N/A" : genreList.map((genreType, index) => {
           return (
             <div key={index} className="mt-5">
