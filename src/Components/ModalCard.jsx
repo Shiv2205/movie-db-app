@@ -15,7 +15,7 @@ const ModalCard = (props) => {
       })
     );
     setGenreList(resList[0]);
-    console.log(genreList);
+    //console.log(genreList);
   }, []);
 
   return (
@@ -37,7 +37,7 @@ const ModalCard = (props) => {
         {genreList.length === 0 ? "N/A" : genreList.map((genreType, index) => {
           return (
             <div key={index} className="mt-5">
-                <div key={index} className="px-4 py-2 rounded-lg text-center text-white font-semibold bg-fuchsia-600">
+                <div key={index} className="py-2 rounded-lg text-center text-white font-semibold bg-fuchsia-600 lg:px-4 md:px-7 sm:px-4">
                 {genreType}
                 </div>
             </div>
