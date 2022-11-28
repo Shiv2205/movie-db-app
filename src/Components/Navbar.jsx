@@ -6,7 +6,7 @@ const Navbar = (props) => {
   const handleSubmit = () => {
     let searchTarget = document.getElementById('searchbar').value;
     props.getSearch(searchTarget);
-    //document.getElementById('searchbar').value = "";
+    props.setNotFound(false);
   }
 
   const homeButton = () => {
