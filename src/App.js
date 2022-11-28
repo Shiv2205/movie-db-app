@@ -45,7 +45,7 @@ function App() {
 
         <Navbar obj={{sortType: sortBy, setSortType: setSortBy}} getSearch={getSearch} setNotFound={setNotFound}/>
 
-        <div className="w-full grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
+        <div className="w-full grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
           {
             notFound ? <NotFound /> 
             :
