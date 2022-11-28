@@ -23,7 +23,7 @@ export default RadialRating;
 
 const checkProgress = (progress) => {
     if(progress < 5)
-        return "text-secondary";
+        return "text-red-600";
     if(progress >= 5 && progress < 7.5)
         return "text-warning";
     
