@@ -32,19 +32,21 @@ const ModalCard = (props) => {
       <div className="card-body items-center text-center">
         <h2 className="card-title ">{props.obj.title}</h2>
 
-        <p>{props.obj.overview}</p><br />
+        <p>
+        <p className="text-lg font-semibold badge p-4 bg-base-200">Release Date: {releaseDate.getDate()} {monthToString(releaseDate.getMonth())} {releaseDate.getFullYear()}</p>
+        <br /><br />
+         <p className="text-lg font-semibold">Overview:</p> {props.obj.overview}</p><br />
         <h3 className="text-lg font-semibold">Genres:</h3>
-        <div className={conditionalClasses(genreList.length < 5 ? "lg:grid-cols-4" : "lg:grid-cols-5", "grid gap-5 md:grid-cols-2 md:gap-7 sm:grid-cols-2")} >
+        <div className={conditionalClasses(genreList.length < 5 ? "xl:grid-cols-4" : "xl:grid-cols-5", "grid gap-5 md:grid-cols-3 md:gap-7 sm:grid-cols-2")} >
         {genreList.length === 0 ? "N/A" : genreList.map((genreType, index) => {
           return (
             <div key={index} className="mt-5">
-                <div key={index} className="py-2 rounded-lg text-center text-white font-semibold bg-fuchsia-600 lg:px-4 md:px-7 sm:px-4">
+                <div key={index} className="py-2 rounded-lg text-center text-white font-semibold bg-fuchsia-600 xl:px-5 md:px-7 sm:px-4">
                 {genreType}
                 </div>
             </div>
           );
         })}
-        <p>Release Date: <span>{releaseDate.getDate()} {monthToString(releaseDate.getMonth())} {releaseDate.getFullYear()}</span></p>
         </div>
       </div>
     </div>
