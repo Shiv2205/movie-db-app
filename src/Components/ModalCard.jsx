@@ -37,11 +37,11 @@ const ModalCard = (props) => {
         <br /><br />
          <p className="text-lg font-semibold">Overview:</p> {props.obj.overview}</p><br />
         <h3 className="text-lg font-semibold">Genres:</h3>
-        <div className={conditionalClasses(genreList.length < 5 ? "xl:grid-cols-4" : "xl:grid-cols-5", "grid gap-5 md:grid-cols-3 md:gap-7 sm:grid-cols-2")} >
+        <div className={conditionalClasses(genreList.length < 5 ? "lg:grid-cols-4" : "lg:grid-cols-5", "grid gap-5 grid-cols-2")} >
         {genreList.length === 0 ? "N/A" : genreList.map((genreType, index) => {
           return (
             <div key={index} className="mt-5">
-                <div key={index} className="py-2 rounded-lg text-center text-white font-semibold bg-fuchsia-600 xl:px-5 md:px-7 sm:px-4">
+                <div key={index} className="py-2 rounded-lg text-center text-white font-semibold bg-fuchsia-600 px-4 lg:px-5">
                 {genreType}
                 </div>
             </div>

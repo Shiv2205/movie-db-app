@@ -3,7 +3,7 @@ import RadialRating from "./RadialRating";
 
 const MovieCard = (props) => {
   return (
-    <div className="card bg-base-300 shadow-xl ml-10 mb-10 xl:w-80 md:w-72 sm:w-64">
+    <div className="card bg-base-300 shadow-xl justify-self-center mb-10 w-64 lg:w-80">
       <figure className="px-2 pt-2">
         <img
           src={`https://image.tmdb.org/t/p/w500${props.obj.poster_path}`}
@@ -27,3 +27,4 @@ const MovieCard = (props) => {
 };
 
 export default MovieCard;
+
